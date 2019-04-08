@@ -1,0 +1,38 @@
+﻿<Page x:Class="BioMApp.Views.GetInformationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BioMApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="549" d:DesignWidth="779"
+      Title="GetInformationPage">
+
+    <Grid>
+
+        <Label x:Name="lblAge" Content="Podaj wiek" Style="{StaticResource labelStyle}" HorizontalAlignment="Stretch" Margin="246,105,412,0" VerticalAlignment="Top" Height="28" Width="Auto"/>
+        <TextBox x:Name="tbAge" Style="{StaticResource tbStyle}" Background="White" HorizontalAlignment="Stretch" Height="26" Margin="246,133,247,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="Auto"/>
+
+        <Label x:Name="lblSex" Content="Wybierz płeć" Style="{StaticResource ResourceKey=labelStyle}" HorizontalAlignment="Stretch" Margin="246,160,376,0" VerticalAlignment="Top" Width="Auto" Height="34"/>
+        <ComboBox x:Name="cbSex" Margin="246,189,247,0" FontWeight="Bold"  FontSize="13.333" ToolTip="Pole obowiązkowe!" Height="26" VerticalAlignment="Top" >
+            <ComboBoxItem x:Name="Male" Content="Mężczyzna"/>
+            <ComboBoxItem x:Name="Female" Content="Kobieta"/>
+        </ComboBox>
+
+        <Label x:Name="lblPreferences" Content="Preferencje muzyczne" Style="{StaticResource ResourceKey=labelStyle}" HorizontalAlignment="Stretch" Margin="246,216,313,0" VerticalAlignment="Top" Width="Auto" Height="29"/>
+        <ComboBox x:Name="cbSex_Copy" Margin="246,245,247,0" FontWeight="Bold"  FontSize="13.333" ToolTip="Pole obowiązkowe!" Height="26" VerticalAlignment="Top" >
+            <ComboBoxItem x:Name="Male1" Content="Muzyka spokojna"/>
+            <ComboBoxItem x:Name="Female1" Content="Muzyka dynamiczna"/>
+        </ComboBox>
+
+        <Label x:Name="lblListenmusic" Content="Czy słuchasz muzyki podczas nauki?" Style="{StaticResource ResourceKey=labelStyle}" HorizontalAlignment="Stretch" Margin="246,272,228,0" VerticalAlignment="Top" Width="Auto" Height="32"/>
+        <ComboBox x:Name="cbListenmusic" Margin="246,300,247,0" FontWeight="Bold"  FontSize="13.333" ToolTip="Pole obowiązkowe!" Height="26" VerticalAlignment="Top" >
+            <ComboBoxItem x:Name="Male2" Content="Tak"/>
+            <ComboBoxItem x:Name="Female2" Content="Nie"/>
+        </ComboBox>
+
+        <Button x:Name="btnConfirm" Style="{StaticResource buttonStyle2}" Content="Potwierdź" Click="BtnConfirm_OnClick" HorizontalAlignment="Stretch" Margin="246,353,247,0" VerticalAlignment="Top" Height="38"/>
+
+
+    </Grid>
+</Page>
