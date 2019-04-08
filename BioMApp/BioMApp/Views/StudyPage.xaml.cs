@@ -16,11 +16,8 @@ namespace BioMApp.Views
             InitializeComponent();
             LoadPageTime();
             Progres();
-
-
         }
-
-
+        
         Stopwatch sw = new Stopwatch();
 
         void LoadPageTime()
@@ -43,6 +40,17 @@ namespace BioMApp.Views
 
                                 ProgressBar.Value = n;
                             }), null);
+
+                            if(n.Equals(999))
+                            {
+
+                                this.Dispatcher.Invoke(() =>
+                                {
+                                    sw.Stop();
+                                    StudyPageViewAction.ChangeStudyPage(sw.Elapsed, 1);
+                                });
+                               
+                            }
                         };
 
 
