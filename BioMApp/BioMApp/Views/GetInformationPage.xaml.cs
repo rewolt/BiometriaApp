@@ -27,7 +27,8 @@ namespace BioMApp.Views
 
         private void BtnConfirm_OnClick(object sender, RoutedEventArgs e)
         {
-            Application.Current.Windows.OfType<MainWindow>().FirstOrDefault().frame.Content = new BeforeTestPage();
+            Application.Current.Windows.OfType<MainWindow>()
+                .FirstOrDefault().frame.Content = new BeforeTestPage();
 
         }
     }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls.Primitives;
+﻿using System.Collections.Generic;
 using System.Windows.Media;
 
 namespace BioMApp.Models
@@ -21,13 +16,7 @@ namespace BioMApp.Models
             new SolidColorBrush(System.Windows.Media.Colors.Orange),
             new SolidColorBrush(System.Windows.Media.Colors.Purple),
             new SolidColorBrush(System.Windows.Media.Colors.HotPink),
-            new SolidColorBrush(System.Windows.Media.Colors.White),           
+            new SolidColorBrush(System.Windows.Media.Colors.White),
         };
-
-
-        
-
-       
-
     }
 }

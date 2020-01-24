@@ -11,21 +11,52 @@ namespace BioMApp.Database
 {
     using System;
     using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    
-    public partial class BiomAppDatabaseEntities : DbContext
+
+    public partial class BiomAppDatabaseContext : DbContext
     {
-        public BiomAppDatabaseEntities()
+        public BiomAppDatabaseContext()
             : base("name=BiomAppDatabaseEntities")
         {
+            Database.SetInitializer(new DatabaseInitializer());
         }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
+
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Filament> Filaments { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
+        private class DatabaseInitializer : CreateDatabaseIfNotExists<BiomAppDatabaseContext>
+        {
+            private Random rnd = new Random();
+            private enum Colors { Green, Red, Blue, Gray, Yellow, Orange, Purple, Brown, Pink }
+            protected override void Seed(BiomAppDatabaseContext context)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    var filament = new Filament {
+                        Answer = i,
+                        BtnBackColor1 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnBackColor2 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnBackColor3 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnBackColor4 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnStringColor1 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnStringColor2 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnStringColor3 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnStringColor4 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        RectangleCollor = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnString1 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnString2 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnString3 = ((Colors)rnd.Next(0, 8)).ToString(),
+                        BtnString4 = ((Colors)rnd.Next(0, 8)).ToString()
+                    };
+                    context.Filaments.Add(filament);
+                };
+                
+                base.Seed(context);
+            }
+        }
     }
 }
