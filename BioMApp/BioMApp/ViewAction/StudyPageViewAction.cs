@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
-using BioMApp.Database;
+﻿using BioMApp.Database;
 using BioMApp.Models;
 using BioMApp.SQL;
 using BioMApp.Views;
+using System;
+using System.Linq;
+using System.Windows;
+using System.Windows.Media;
 
 namespace BioMApp.ViewAction
 {
@@ -24,7 +21,7 @@ namespace BioMApp.ViewAction
             page.rec.Fill = (SolidColorBrush)new BrushConverter().ConvertFromString(filament.RectangleCollor.Trim());
 
             page.btn1.Background =
-                (SolidColorBrush) new BrushConverter().ConvertFromString(filament.BtnBackColor1.Trim());
+                (SolidColorBrush)new BrushConverter().ConvertFromString(filament.BtnBackColor1.Trim());
             page.btn1.Foreground =
                 (SolidColorBrush)new BrushConverter().ConvertFromString(filament.BtnStringColor1.Trim());
             page.btn1.Content = filament.BtnString1.Trim();
@@ -49,7 +46,7 @@ namespace BioMApp.ViewAction
 
             Instance.answer = filament.Answer;
             Instance.index = Instance.index + 1;
-            
+
 
             return page;
         }
@@ -109,7 +106,7 @@ namespace BioMApp.ViewAction
 
             if (Instance.index == 31)
             {
-                
+
             }
 
 

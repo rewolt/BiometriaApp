@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Matuszek\Desktop\BiometriaApp\BioMApp\BioMApp\Database\Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Rewolt\source\repos\BiometriaApp\BioMApp\BioMApp\Database\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
