@@ -12,9 +12,11 @@ namespace BioMApp.SQL
             Random rnd = new Random();
             int id = rnd.Next(1, 7);
 
-            Filament filament = new BiomAppDatabaseEntities().Filaments.FirstOrDefault(x => x.Id == id);
-
-            return filament;
+            using (var entity = new BiomAppDatabaseEntities())
+            {
+                Filament filament = entity.Filaments.FirstOrDefault(x => x.Id == id);
+                return filament;
+            }
         }
 
     }
